@@ -1,6 +1,9 @@
 import os
 import requests
 import time
+from dotenv import load_dotenv
+load_dotenv()
+
 GROQ_MODELS = {
     "llama3": "llama3-8b-8192",
     "deepseek": "deepseek-r1-distill-llama-70b"
@@ -10,7 +13,6 @@ API_KEYS = {
     "gemini": os.environ.get("GEMINI_API_KEY", ""),
     "mistral": os.environ.get("MISTRAL_API_KEY", ""),
 }
-
 
 def call_groq_api(prompt: str, temperature: float, model: str = "llama3") -> str:
     url = "https://api.groq.com/openai/v1/chat/completions"
@@ -96,5 +98,10 @@ def call_model(prompt: str, create_distraction: bool, model: str = "ollama", ret
             print(f"Rate limit exceeded for {model}. Retrying in {wait_time} seconds.")
             time.sleep(wait_time)
             return call_model(prompt, create_distraction, model, retries + 1)
-        
+        else:
+            print(e)
+            return ""
+    except Exception as e:
+        print(e)
+        return ""
     
