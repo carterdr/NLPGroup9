@@ -12,7 +12,8 @@ ollama pull mistral
 ollama serve
 ```
 2. Download train.json and test.json from https://huggingface.co/datasets/ChilleD/SVAMP/tree/main and put them into the dataset/ folder
-3. Next navigate to the root project folder and run
+3. Set up .env variables with your GROQ_API_KEY, GEMINI_API_KEY, and MISTRAL_API_KEY
+4. Next navigate to the root project folder and run
 ```bash
 python3 edit_dataset.py
 ```
