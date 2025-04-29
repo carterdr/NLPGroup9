@@ -1,5 +1,2 @@
 .env
-stats.py
-create_results.py
-results/
 __pycache__/
