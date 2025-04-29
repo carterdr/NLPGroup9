@@ -69,7 +69,7 @@ def evaluate_model(model_name: str):
                     print(f"Processed {index} items for model {model_name}.")
 
 if __name__ == "__main__":
-    models = ["deepseek", "mistral", "gemini"]
+    models = ["llama3", "mistral", "gemini"]
     processes = []
     for model in models:
         p = Process(target=evaluate_model, args=(model, ))
@@ -78,4 +78,4 @@ if __name__ == "__main__":
     for p in processes:
         p.join()
     # run after all the others since it uses the same api_key as llama3
-    #evaluate_model("deepseek")
+    evaluate_model("deepseek")

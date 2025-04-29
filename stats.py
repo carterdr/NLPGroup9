@@ -23,7 +23,7 @@ def create_stats_grouped(results: list, grouping_list: list, save_tp : bool = Fa
 
 
 if __name__ == "__main__":
-    files = ["results/results_llama3.json", "results/results_mistral.json", "results/results_gemini.json"]
+    files = ["results/results_llama3.json", "results/results_mistral.json", "results/results_gemini.json", "results/results_deepseek.json"]
     results = []
     for file in files:
         results.extend(get_all_results(file))
