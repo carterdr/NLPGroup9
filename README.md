@@ -43,7 +43,7 @@ python3 stats.py
 3. **gemini-2.0-flash** was run with https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash
 4. call_llm.py handles calling all the LLM APIs
 # Problems encountered
-1. We originally created the code on google colab and realized later that we were supposed to have a GitHub so Carter decided to move it himself.
+1. We all originally created the code on google colab and then realized later that we were supposed to have a GitHub so Carter decided to move it himself.
 2. After the mistral-large-latest, llama3-8b-8192 and gemini-2.0-flash models completed, the deepseek model started to run, and we noticed that it was including its long reasoning in its responses. So the prompt was changed to be more strict with only including the number result for DeepSeek only. This didn't work very well so we decided to take the value after the last "\n" in the deepseek response and treat it as the response. If we didn't do this the response would always be a fn even though the model had the right answer. 
 
 ### Orignal Prompt:
